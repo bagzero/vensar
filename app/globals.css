@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-color: #151515;
+  --pink: #FF6DB3;
+  --purple: #4141A0;
+}
+
+/* Customizes the scrollbar for all elements and the <body> */
+::-webkit-scrollbar {
+  width: 16px; /* Adjust the width of the scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--pink), var(--purple)); /* Gradient from pink to purple */
+  border-radius: 8px; /* Rounded corners of the scroll thumb */
+  border: 4px solid black; /* Creates padding around the scroll thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #b4457b, #2a2a77); /* Gradient from pink to purple */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black; /* Color of the scrollbar track */
+}
+
+body {
+  @apply text-white;
+  background: black;
+  overflow-x: hidden;
+}
+
+/* body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("/background.jpg") no-repeat center center;
+  background-size: cover;
+  opacity: 0.3;
+  z-index: -1;
+} */
+
+body * {
+  transition: 300ms ease-in-out;
+}
+
+.white-grad {
+    /* Define the gradient */
+    background-image: radial-gradient(at center bottom, rgba(255, 255, 255, .85), white);
+    /* Make the text transparent to show the background */
+    color: transparent;
+    /* Clip the background to the text */
+    background-clip: text;
+}
+
+.purp-grad {
+    /* Define the gradient */
+    background-image: radial-gradient(at center bottom, var(--pink), var(--purple));
+    /* Make the text transparent to show the background */
+    color: transparent;
+    /* Clip the background to the text */
+    background-clip: text;
+}
+
+.purp-grad2 {
+  /* Define the gradient */
+  background-image: radial-gradient(at center, var(--pink), #5F64E3);
+  /* Make the text transparent to show the background */
+  color: transparent;
+  /* Clip the background to the text */
+  background-clip: text;
+}
+
+.pink-grad {
+  /* Define the gradient */
+  background-image: radial-gradient(at center bottom, var(--purple), var(--pink));
+  /* Make the text transparent to show the background */
+  color: transparent;
+  /* Clip the background to the text */
+  background-clip: text;
+}
+
+.reg-grad {
+  /* Define the gradient */
+  background-image: radial-gradient(at top right, var(--pink), var(--purple));
+  /* Make the text transparent to show the background */
+  color: transparent;
+  /* Clip the background to the text */
+  background-clip: text;
+}
+
+.reg-grad-right {
+  /* Define the gradient */
+  background-image: radial-gradient(at bottom right, var(--purple), var(--pink));
+  /* Make the text transparent to show the background */
+  color: transparent;
+  /* Clip the background to the text */
+  background-clip: text;
+}
+
+.gradient-border {
+  position: relative;
+  border: solid 1px transparent; /* Adjust the border size as needed */
+  background-image: linear-gradient(#080808, #080808), linear-gradient(to top right, var(--purple), var(--pink));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Adjust the width and height as per your requirement */
+.gradient-border-content {
+  width: 200px; /* Example width */
+  height: 100px; /* Example height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gradient-line {
+  height: 2px; /* Height of the gradient line, adjust as needed*/
+  background: linear-gradient(to right, var(--pink), var(--purple)); /* Gradient from purple to pink */
+}
+
+.background-gradient {
+  background-image: linear-gradient(to right, var(--pink), var(--purple));
+}
+
+.label-hover:hover {
+  transform: scale(1.05) translateX(6px) translateY(-2px);
+  background-color: transparent;
+  backdrop-filter: saturate(100%) blur(10px);
+  border: white solid 1px;
+}
+
+.description-hover:hover {
+  transform: none;
+  background-color: transparent;
+  backdrop-filter: saturate(100%) blur(10px);
+  border: black solid 1px;
+}
+
+.label-hover:hover h1,
+.description-hover:hover h1 {
+  color: white;
+}
+
+.flashcard-hover:hover .image-hover {
+  opacity: 0.4;
+  transform: scale(1.10);
+}
+
+.purp-glow-image {
+  position: relative;
+  overflow: hidden; /* Ensures the pseudo-element doesn't exceed this container's bounds */
+}
+
+.purp-glow-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/purp-glow-2.jpg');
+  opacity: 0.75;
+  background-size: cover;
+  background-position: center;
+  transform: rotate(180deg);
+  filter: blur(60px); /* Adjust the blur amount as needed */
+  z-index: -1; /* Ensures the background is behind the content */
+}
